@@ -39,10 +39,13 @@ services:
             target: /usr/share/filebeat/filebeat.yml
             
         volumes:
-            - /usr/share/filebeat/filebeat.yml:/usr/share/filebeat/data
+            - ./filebeat:/usr/share/filebeat/data
             - /var/lib/docker:/var/lib/docker:ro
             - /var/run/docker.sock:/var/run/docker.sock
             - /var/lib/docker/containers/:/var/lib/docker/containers/:ro
+        environment:
+            - ELASTICSEARCH_HOST=http://40.91.203.79:9200/
+            - KIBANA_HOST=http://40.91.203.79:5601/
  
 networks:
   elk:
