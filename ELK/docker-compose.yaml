@@ -35,7 +35,7 @@ services:
             - elk
        
         configs:
-            - source: fb_config
+          - source: fb_config
             target: /usr/share/filebeat/filebeat.yml
             
         volumes:
