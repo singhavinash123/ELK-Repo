@@ -10,7 +10,7 @@ services:
         ports:
             - "9200:9200"
         volumes:
-            - ./elasticsearch_data:/usr/share/elasticsearch/data
+            - elasticsearch_data:/usr/share/elasticsearch/data
         networks:
             - elk
 
@@ -32,14 +32,14 @@ services:
             - elasticsearch
             - kibana
         networks:
-          - elk
+            - elk
        
         configs:
-          - source: fb_config
+            - source: fb_config
             target: /usr/share/filebeat/filebeat.yml
             
         volumes:
-            - ./filebeat:/usr/share/filebeat/data
+            - filebeat:/usr/share/filebeat/data
             - /var/lib/docker:/var/lib/docker:ro
             - /var/run/docker.sock:/var/run/docker.sock
             - /var/lib/docker/containers/:/var/lib/docker/containers/:ro

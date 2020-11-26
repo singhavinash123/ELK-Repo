@@ -2,6 +2,7 @@ filebeat.inputs:
   - type: container
     paths:
       - /var/lib/docker/containers/*/*.log
+      
 processors:
   - add_docker_metadata:
       host: 'unix:///var/run/docker.sock'
@@ -10,6 +11,7 @@ processors:
         - message
       target: json
       overwrite_keys: true
+      
 setup.kibana:
   host: ["${KIBANA_HOST}:kibana:5601"]   
     
@@ -18,5 +20,6 @@ output.elasticsearch:
   
   indices:
     - index: 'filebeat-%{[agent.version]}-%{+yyyy.MM.dd}'
+    
 logging.json: true
 logging.metrics.enabled: false
