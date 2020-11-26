@@ -39,7 +39,7 @@ services:
             target: /usr/share/filebeat/filebeat.yml
             
         volumes:
-            - /filebeat/config/filebeat.yml:/usr/share/filebeat/data
+            - /usr/share/filebeat/filebeat.yml:/usr/share/filebeat/data
             - /var/lib/docker:/var/lib/docker:ro
             - /var/run/docker.sock:/var/run/docker.sock
             - /var/lib/docker/containers/:/var/lib/docker/containers/:ro
@@ -50,7 +50,7 @@ networks:
      
 configs:
   fb_config:
-    file: /filebeat/config/filebeat.yml           
+    file: /home/azureuser/ELK-Repo/ELK/filebeat/config/filebeat.yml           
 
 volumes:
     elasticsearch_data:
