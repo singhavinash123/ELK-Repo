@@ -11,6 +11,9 @@ processors:
     fields: ["message"]
     target: "json"
     overwrite_keys: true
+    
+setup.kibana:
+  host: kibana:5601
 
 output.elasticsearch:
   hosts: ["elasticsearch:9200"]
