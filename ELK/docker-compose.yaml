@@ -50,7 +50,7 @@ networks:
      
 configs:
   fb_config:
-    file: $PWD/filebeat/config/filebeat.yml           
+    file: $pwd/filebeat/config/filebeat.yml           
 
 volumes:
     elasticsearch_data:
