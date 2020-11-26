@@ -16,7 +16,7 @@ setup.kibana:
   host: ["${KIBANA_HOST}:kibana:5601"]   
     
 output.elasticsearch:
-  hosts: ["${ELASTICSEARCH_HOST}:elasticsearch:8900"]
+  hosts: ["${ELASTICSEARCH_HOST}:elasticsearch:9200"]
   
   indices:
     - index: 'filebeat-%{[agent.version]}-%{+yyyy.MM.dd}'
