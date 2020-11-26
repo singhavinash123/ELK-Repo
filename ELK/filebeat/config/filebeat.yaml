@@ -19,7 +19,7 @@ output.elasticsearch:
   hosts: ["${ELASTICSEARCH_HOST}:elasticsearch:9200"]
   
   indices:
-    - index: 'filebeat-%{[agent.version]}-%{+yyyy.MM.dd}'
+    - index: '"test-%{+yyyy.MM.dd}"'
     
 logging.json: true
 logging.metrics.enabled: false
